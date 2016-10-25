@@ -1,20 +1,25 @@
 'use strict';
 
-// var parent = document.getElementById('parent');
-// var existingThing = document.getElementById('existing-thing');
+function insertElement(parentObject, elementObject) {
+  var newElement = document.createElement(elementObject.tag);
+  var text = document.createTextNode(elementObject.text);
+  // grab the element with that id
+  if (parentObject.id) {
+    var parent = document.getElementById(parentObject.id);
+  } else if (parentObject.class) {
+    // grab the first element that has that class
+    var parent = document.getElementsByClassName(parentObject.class);
+    var parent = parent[0];
+  }
+  var firstChild = parent.firstChild;
 
-var parent = document.getElementsByClassName('c-content');
-var parent = parent[0];
-var existingThing = parent.getElementsByClassName('o-layout');
-var existingThing = existingThing[0];
+  newElement.id = elementObject.id;
 
-var newThing = document.createElement('h1');
-newThing.id = "new-thing";
+  newElement.appendChild(text);
 
-var text = document.createTextNode('This content was injected by a chrome extension!');
-newThing.appendChild(text);
+  parent.insertBefore(newElement, firstChild);
 
-parent.insertBefore(newThing, existingThing);
+}
 
 function loadJSON(filename, element) {
   var request = new XMLHttpRequest();
@@ -52,4 +57,8 @@ var childElement = {
   tag: 'h1',
   text: 'This content was injected by a chrome extension!',
 }
+
+
+insertElement(parentElement, childElement);
+
 // loadJSON(jsonFile, childElement);
