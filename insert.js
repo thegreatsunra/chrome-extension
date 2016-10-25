@@ -38,7 +38,6 @@ function loadJSON(filename, element) {
   request.send();
 }
 
-loadXMLDoc();
 // id or class
 // not both
 var parentElement = {
@@ -53,3 +52,4 @@ var childElement = {
   tag: 'h1',
   text: 'This content was injected by a chrome extension!',
 }
+// loadJSON(jsonFile, childElement);
