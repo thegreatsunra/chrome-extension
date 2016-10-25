@@ -39,3 +39,17 @@ function loadXMLDoc() {
 }
 
 loadXMLDoc();
+// id or class
+// not both
+var parentElement = {
+  // id: 'parent-id',
+  class: 'c-content',
+}
+
+// id, class, tag
+var childElement = {
+  id: 'id-new-element',
+  class: 'c-new-element',
+  tag: 'h1',
+  text: 'This content was injected by a chrome extension!',
+}
