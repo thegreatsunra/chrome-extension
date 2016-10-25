@@ -16,26 +16,26 @@ newThing.appendChild(text);
 
 parent.insertBefore(newThing, existingThing);
 
-function loadXMLDoc() {
-    var xmlhttp = new XMLHttpRequest();
+function loadJSON(filename, element) {
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function() {
+    if (request.readyState == XMLHttpRequest.DONE ) {
+     if (request.status == 200) {
+       var parsedJSON = JSON.parse(request.responseText);
+       console.log(parsedJSON.query.results.json.statuses);
+       document.getElementById(element.id).innerHTML = parsedJSON.query.results.json.statuses[0].created_at;
+     }
+     else if (request.status == 400) {
+      alert('There was an error 400');
+     }
+     else {
+       alert('something else other than 200 was returned');
+     }
+    }
+  };
 
-    xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
-           if (xmlhttp.status == 200) {
-               var parsedJSON = JSON.parse(xmlhttp.responseText);
-               console.log(parsedJSON.query.results.json.statuses);
-               document.getElementById('new-thing').innerHTML = parsedJSON.query.results.json.statuses[0].created_at;
-           }
-           else if (xmlhttp.status == 400) {
-              alert('There was an error 400');
-           }
-           else {
-               alert('something else other than 200 was returned');
-           }
-        }
-    };
-
-    xmlhttp.send();
+  request.open('GET', chrome.extension.getURL(filename), true);
+  request.send();
 }
 
 loadXMLDoc();
