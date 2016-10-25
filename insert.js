@@ -18,7 +18,6 @@ function insertElement(parentObject, elementObject) {
   newElement.appendChild(text);
 
   parent.insertBefore(newElement, firstChild);
-
 }
 
 function loadJSON(filename, element) {
@@ -60,5 +59,4 @@ var childElement = {
 
 
 insertElement(parentElement, childElement);
-
 // loadJSON(jsonFile, childElement);
