@@ -1,10 +1,10 @@
 {
-  "name": "Getting started example",
-  "description": "This extension shows a Google Image search result for the current page",
+  "name": "chrome-extension",
+  "description": "This extension inserts some content",
   "manifest_version": 2,
   "version": "2.0",
   "browser_action": {
-    "default_title": "Make this page red",
+    "default_title": "Insert some content",
     "default_icon": "icon.png"
   },
   "permissions": [
