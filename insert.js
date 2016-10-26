@@ -58,6 +58,7 @@ var childElement = {
   text: 'This content was injected by a chrome extension!',
 }
 
+// var jsonFile = 'foobar.json';
 
 insertElement(parentElement, childElement);
 // loadJSON(jsonFile, childElement);
