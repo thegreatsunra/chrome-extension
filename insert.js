@@ -54,7 +54,7 @@ var parentElement = {
 var childElement = {
   id: 'id-new-element',
   class: 'c-new-element',
-  tag: 'h1',
+  tag: 'div',
   text: 'This content was injected by a chrome extension!',
 }
 

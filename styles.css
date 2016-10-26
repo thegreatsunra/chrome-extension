@@ -1,3 +1,7 @@
 .c-new-element {
-  color: red;
+  box-sizing: border-box;
+  width: 300px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  font-size: 13px;
 }
