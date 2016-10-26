@@ -14,6 +14,7 @@ function insertElement(parentObject, elementObject) {
   var firstChild = parent.firstChild;
 
   newElement.id = elementObject.id;
+  newElement.classList.add(elementObject.class); 
 
   newElement.appendChild(text);
 
