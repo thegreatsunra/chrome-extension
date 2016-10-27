@@ -2,17 +2,16 @@
 
 // need to debounce your shit
 
-function moveCarousel(direction) {
+function moveCarousel(currentMargin, direction) {
   var carousel = document.getElementById('id-carousel');
-  var currentMargin = window.getComputedStyle(carousel).marginLeft;
-  currentMargin = currentMargin.replace('px','');
-  currentMargin = parseInt(currentMargin, 10);
   console.log('direction: ' + direction)
   if (direction === 'previous') {
-    carousel.style.marginLeft = ((currentMargin + 300) + 'px');
+    currentCarouselMargin = currentMargin + 300;
+    carousel.style.marginLeft = (currentCarouselMargin + 'px');
     currentCarouselCard = currentCarouselCard - 1;
   } else {
-    carousel.style.marginLeft = ((currentMargin - 300) + 'px');
+    currentCarouselMargin = currentMargin - 300;
+    carousel.style.marginLeft = (currentCarouselMargin + 'px');
     currentCarouselCard = currentCarouselCard + 1;
   }
 }
@@ -86,11 +85,12 @@ var carouselControlLinkNext = document.getElementById('id-carousel-control-link-
 var carouselControlLinkPrevious = document.getElementById('id-carousel-control-link-previous');
 
 var currentCarouselCard = 0;
+var currentCarouselMargin = 0;
 
 carouselControlLinkNext.addEventListener('click', function(event) {
   event.preventDefault();
   if (currentCarouselCard < 14) {
-    moveCarousel();
+    moveCarousel(currentCarouselMargin);
   }
   if (currentCarouselCard > 0) {
     carouselControlLinkPrevious.classList.remove('c-carousel__control-link--disabled');
@@ -103,11 +103,10 @@ carouselControlLinkNext.addEventListener('click', function(event) {
   console.log('current card: ' + currentCarouselCard)
 });
 
-
 carouselControlLinkPrevious.addEventListener('click', function(event) {
   event.preventDefault();
   if (currentCarouselCard > 0) {
-    moveCarousel('previous');
+    moveCarousel(currentCarouselMargin, 'previous');
   }
   if (currentCarouselCard < 14) {
     carouselControlLinkNext.classList.remove('c-carousel__control-link--disabled');
