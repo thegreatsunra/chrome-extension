@@ -1,4 +1,4 @@
-.c-new-element {
+.c-socialator {
   box-sizing: border-box;
   width: 300px;
   height: 200px;
@@ -9,7 +9,7 @@
   background-color: #fee;
 }
 
-.c-nav-link {
+.c-carousel__control-link {
   position: absolute;
   display: block;
   width: 30px;
@@ -20,42 +20,42 @@
   transition: opacity ease-out 250ms;
 }
 
-.c-nav-link--next {
+.c-carousel__control-link--next {
   right: 0;
   border-right-width: 0;
   border-bottom-left-radius: 8px;
   border-top-left-radius: 8px;
 }
 
-.c-nav-link--previous {
+.c-carousel__control-link--previous {
   left: 0;
   border-left-width: 0;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
 }
 
-.c-new-element:hover .c-nav-link,
-.c-new-element:hover .c-nav-link--disabled:hover {
+.c-carousel:hover .c-carousel__control-link,
+.c-carousel:hover .c-carousel__control-link--disabled:hover {
   opacity: 0.6;
 }
 
-.c-new-element:hover .c-nav-link:hover {
+.c-carousel:hover .c-carousel__control-link:hover {
   opacity: 1;
 }
 
-.c-icon {
+.c-carousel__control-icon {
   display: block;
 }
 
-.c-icon-chevron {
+.c-carousel__control-icon-chevron {
   width: 14px;
   height: 23px;
   background: transparent url('chrome-extension://ndmmcnfngmkloicmidmpehpocnkchecd/sprite.png') 0 0 no-repeat;
 }
 
-.c-icon-chevron--next {
+.c-carousel__control-icon-chevron--next {
 }
 
-.c-icon-chevron--previous {
+.c-carousel__control-icon-chevron--previous {
   background-position: -14px 0;
 }
