@@ -2,7 +2,8 @@
 
 function insertElement(parentObject, elementObject) {
   var newElement = document.createElement(elementObject.tag);
-  var text = document.createTextNode(elementObject.text);
+  // var text = document.createTextNode(elementObject.text);
+  var markup = '<div class="c-nav"><a href="#" class="c-nav-link c-nav-link--previous"><i class="c-icon c-icon-chevron c-icon-chevron--previous"></i></a><a href="#" class="c-nav-link c-nav-link--next"><i class="c-icon c-icon-chevron c-icon-chevron--next"></i></a></div><div class="c-content">' + elementObject.text + '</div>';
   // grab the element with that id
   if (parentObject.id) {
     var parent = document.getElementById(parentObject.id);
@@ -16,7 +17,7 @@ function insertElement(parentObject, elementObject) {
   newElement.id = elementObject.id;
   newElement.classList.add(elementObject.class); 
 
-  newElement.appendChild(text);
+  newElement.innerHTML = markup;
 
   parent.insertBefore(newElement, firstChild);
 }
