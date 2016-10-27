@@ -1,5 +1,22 @@
 'use strict';
 
+// need to debounce your shit
+
+function moveCarousel(direction) {
+  var carousel = document.getElementById('id-carousel');
+  var currentMargin = window.getComputedStyle(carousel).marginLeft;
+  currentMargin = currentMargin.replace('px','');
+  currentMargin = parseInt(currentMargin, 10);
+  console.log('direction: ' + direction)
+  if (direction === 'previous') {
+    carousel.style.marginLeft = ((currentMargin + 300) + 'px');
+    currentCarouselCard = currentCarouselCard - 1;
+  } else {
+    carousel.style.marginLeft = ((currentMargin - 300) + 'px');
+    currentCarouselCard = currentCarouselCard + 1;
+  }
+}
+
 function insertElement(parentObject, elementObject) {
   var newElement = document.createElement(elementObject.tag);
   // var text = document.createTextNode(elementObject.text);
