@@ -1,10 +1,10 @@
 {
-  "name": "chrome-extension",
-  "description": "This extension inserts some content",
+  "name": "Socialator",
+  "description": "Inserts some social content about a thing into a thing!",
   "manifest_version": 2,
-  "version": "2.0",
+  "version": "0.1.0",
   "browser_action": {
-    "default_title": "Insert some content",
+    "default_title": "The Socialator is watching (nicely)",
     "default_icon": "icon.png"
   },
   "web_accessible_resources": ["sprite.png"],
