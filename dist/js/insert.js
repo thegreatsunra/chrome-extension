@@ -1,7 +1,5 @@
 'use strict';
 
-// need to debounce your shit
-
 function moveCarousel(currentMargin, direction) {
   var carousel = document.getElementById('id-carousel');
   console.log('direction: ' + direction)
