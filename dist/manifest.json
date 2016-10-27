@@ -5,17 +5,17 @@
   "version": "0.1.0",
   "browser_action": {
     "default_title": "The Socialator is watching (nicely)",
-    "default_icon": "icon.png"
+    "default_icon": "img/icon.png"
   },
-  "web_accessible_resources": ["sprite.png"],
+  "web_accessible_resources": ["img/sprite.png"],
   "permissions": [
     "activeTab"
   ],
   "content_scripts": [
     {
       "matches": ["https://thegreatsunra.com/*"],
-      "js": ["insert.js"],
-      "css": ["styles.css"]
+      "js": ["js/insert.js"],
+      "css": ["css/styles.css"]
     }
   ]
 }
