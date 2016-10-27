@@ -81,3 +81,41 @@ var childElement = {
 
 insertElement(parentElement, childElement);
 // loadJSON(jsonFile, childElement);
+
+var carouselControlLinkNext = document.getElementById('id-carousel-control-link-next');
+var carouselControlLinkPrevious = document.getElementById('id-carousel-control-link-previous');
+
+var currentCarouselCard = 0;
+
+carouselControlLinkNext.addEventListener('click', function(event) {
+  event.preventDefault();
+  if (currentCarouselCard < 14) {
+    moveCarousel();
+  }
+  if (currentCarouselCard > 0) {
+    carouselControlLinkPrevious.classList.remove('c-carousel__control-link--disabled');
+  }
+  if (currentCarouselCard === 14) {
+    carouselControlLinkNext.classList.add('c-carousel__control-link--disabled');
+  } else {
+    carouselControlLinkNext.classList.remove('c-carousel__control-link--disabled');
+  }
+  console.log('current card: ' + currentCarouselCard)
+});
+
+
+carouselControlLinkPrevious.addEventListener('click', function(event) {
+  event.preventDefault();
+  if (currentCarouselCard > 0) {
+    moveCarousel('previous');
+  }
+  if (currentCarouselCard < 14) {
+    carouselControlLinkNext.classList.remove('c-carousel__control-link--disabled');
+  }
+  if (currentCarouselCard === 0) {
+    carouselControlLinkPrevious.classList.add('c-carousel__control-link--disabled');
+  } else {
+    carouselControlLinkPrevious.classList.remove('c-carousel__control-link--disabled');
+  }
+  console.log('current card: ' + currentCarouselCard)
+});
