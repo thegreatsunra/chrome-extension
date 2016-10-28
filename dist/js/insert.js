@@ -29,8 +29,18 @@ function insertElement(parentObject, elementObject) {
   var firstChild = parent.firstChild;
 
   newElement.id = elementObject.id;
-  newElement.classList.add(elementObject.class); 
-
+  // check if class property has multiple classes delimited by spaces
+  if (elementObject.class.indexOf(' ') !== -1) {
+    // if it has spaces, create an array containing each class
+    var classes = elementObject.class.split(' ');
+    // loop through array and apply each class
+    for (var i = classes.length - 1; i >= 0; i--) {
+      newElement.classList.add(classes[i]);
+    }
+  } else {
+    // there aren't any spaces so applt just the one class
+    newElement.classList.add(elementObject.class); 
+  }
   newElement.innerHTML = markup;
 
   parent.insertBefore(newElement, firstChild);
