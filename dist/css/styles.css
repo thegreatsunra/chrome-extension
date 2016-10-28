@@ -16,7 +16,7 @@
   display: block;
   width: 30px;
   height: 60px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid #eee;
   opacity: 0;
   transition: opacity ease-out 250ms;
@@ -55,6 +55,8 @@
 
 .c-carousel__control-icon {
   display: block;
+  margin-top: 20px;
+  margin-left: 10px;
 }
 
 .c-carousel__control-icon-chevron {
