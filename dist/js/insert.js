@@ -76,7 +76,7 @@ var parentElement = {
 }
 
 // id, class, tag
-var childElement = {
+var socialatorElement = {
   id: 'id-socialator',
   class: 'c-socialator',
   tag: 'div',
@@ -86,8 +86,8 @@ var childElement = {
 // var jsonFile = 'foobar.json';
 // var jsonFile = 'twitter.json';
 
-insertElement(parentElement, childElement);
 // loadJSON(jsonFile, childElement);
+insertElement(parentElement, socialatorElement);
 
 var carouselControlLinkNext = document.getElementById('id-carousel-control-link-next');
 var carouselControlLinkPrevious = document.getElementById('id-carousel-control-link-previous');
