@@ -1,11 +1,15 @@
 .c-socialator {
+  padding: 15px;
+  font-family: arial, sans-serif;
+  text-align: left;
   box-sizing: border-box;
   width: 300px;
-  height: 200px;
-  border: 1px solid #ddd;
+  height: 260px;
+  background-color: #f6f6f5;
   font-size: 13px;
   position: relative;
-  background-color: #fee;
+  margin-bottom: 15px;
+
 }
 
 .c-carousel__controls {
